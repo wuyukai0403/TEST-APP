@@ -29,6 +29,12 @@ android {
     buildFeatures {
         viewBinding true
     }
+
+    android.applicationVariants.all { variant ->
+        variant.outputs.all {
+            outputFileName = "TEST-${variant.buildType.name}-${variant.versionName}.apk"
+        }
+    }
 }
 
 dependencies {
