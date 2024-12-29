@@ -9,9 +9,14 @@ import android.widget.TextView;
 
 public class ServerListAdapter extends BaseAdapter {
     private Context mContext;
+    private static String serverName = "Minecraft Server";
 
     public ServerListAdapter(Context context) {
         mContext = context;
+    }
+
+    public static void setServerName(String text) {
+        serverName = text;
     }
 
     @Override
@@ -34,7 +39,7 @@ public class ServerListAdapter extends BaseAdapter {
         if (convertView == null)
             convertView = LayoutInflater.from(mContext).inflate(R.layout.list_inner, parent, false);
         TextView tv = convertView.findViewById(R.id.server_name);
-        tv.setText("Minecraft Server");
+        tv.setText(serverName);
         TextView tv2 = convertView.findViewById(R.id.lat_ms);
         tv2.setText("114ms");
         tv2.setTextColor(0xff22bf20);
